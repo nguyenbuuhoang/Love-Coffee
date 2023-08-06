@@ -1,6 +1,7 @@
 <?php
 	include("assets/class/tmdt.php");
 	$p=new tmdt();
+    error_reporting(E_ERROR | E_PARSE);
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -110,32 +111,30 @@
                     </div>
                 </div>
                 <?php
-                    switch ($_POST['rgi']) {
-                        case 'Đăng ký':{
-                            $name=$_POST['name'];
-                            $sdt=$_POST['sdt'];
-                            $address=$_POST['address'];
-                            $email = $_POST['email'];
-                            $user = $_POST['user'];
-                            $pass = $_POST['pass'];
-                            $phanquyen = 3;
-                            $conn = $p->connect();
-                            $idtk= $p->themxoasua("insert into taikhoan(username,password,ten,phanquyen) values('$user','$pass','$name','$phanquyen')");
-                            if($idtk==1){
-                                echo '<script> alert("Đăng ký thành công");</script>';
-                                $last_id = mysql_insert_id($conn);
-                            }
-                            $name=$_POST['name'];
-                            $sdt=$_POST['sdt'];
-                            $address=$_POST['address'];
-                            $email = $_POST['email'];
-                            $idkh = $p->themxoasua("insert into khachhang(tenkh,sodt,diachi,email,id_tk) values('$name','$sdt','$address','$email','$last_id')");
-                            if ($idkh==1){
-                               
-                            }
+                if ($_POST['rgi'] == 'Đăng ký') {
+                    $name = $_POST['name'];
+                    $sdt = $_POST['sdt'];
+                    $address = $_POST['address'];
+                    $email = $_POST['email'];
+                    $user = $_POST['user'];
+                    $pass = $_POST['pass'];
+                    $phanquyen = 3;
+                    
+                    $conn = $p->connect(); // Thực hiện kết nối đến cơ sở dữ liệu
+                    
+                    // Thêm tài khoản
+                    $idtk = $p->themxoasua("insert into taikhoan(username,password,ten,phanquyen) values('$user','$pass','$name','$phanquyen')");
+                    if ($idtk == 1) {
+                        echo '<script> alert("Đăng ký thành công");</script>';
+                        $last_id = mysqli_insert_id($conn); // Sử dụng hàm mysqli_insert_id()
+                        
+                        // Thêm thông tin khách hàng
+                        $idkh = $p->themxoasua("insert into khachhang(tenkh,sodt,diachi,email,id_tk) values('$name','$sdt','$address','$email','$last_id')");
+                        if ($idkh == 1) {
+                            // Xử lý thành công
                         }
-                        break;
                     }
+                }
                 ?>
             </form>
         </div>

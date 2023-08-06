@@ -147,10 +147,10 @@
 		$date = date('Y-m-d H:i:s');
 		
 		$idbill = $p->themxoasua("insert into hoadon(tenkh,sodt,diachi,ngayhd,tong,magiam,htthanhtoan) values('$name','$sdt','$address','$date','$tong','$magiam','$hinhthuc')");
-		if($idbill==1){
-			echo '<script> alert("Đặt hàng thành công");</script>';
-			$last_id = mysql_insert_id($conn);
-		}
+        if ($idbill == 1) {
+            echo '<script> alert("Đặt hàng thành công");</script>';
+            $last_id = mysqli_insert_id($conn);
+        }        
 		for($i=0; $i < sizeof($_SESSION['sanpham']); $i++){
 			$tensp = $_SESSION['sanpham'][$i][0];
 			$giasp = $_SESSION['sanpham'][$i][1];

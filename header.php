@@ -1,3 +1,6 @@
+<?php
+session_start();
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -12,6 +15,11 @@
     <title>Love Coffee</title>
 
     <!-- Bootstrap core CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.1/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
     <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
@@ -34,6 +42,7 @@ https://templatemo.com/tm-546-sixteen-clothing
 	<link rel="stylesheet" href="assets/font-web/css/brands.css">
 	<link rel="stylesheet" href="assets/font-web/css/solid.css">
     <title>Love Coffe</title>
+    
 </head>
 <body>
 
@@ -71,7 +80,24 @@ https://templatemo.com/tm-546-sixteen-clothing
                 <a class="nav-link" href="buying.php"><i class="fas fa-shopping-bag"></i>  Giỏ hàng</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="Login.php"><i class="fas fa-user-circle"></i> Đăng nhập</a>
+              <?php
+            if (isset($_SESSION['user'])) {
+                // Đã đăng nhập
+                echo '<li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <i class="fas fa-user-circle"></i> ' . $_SESSION['user'] . '
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="userDropdown">
+                            <a class="dropdown-item" href="Logout.php"><i class="fas fa-sign-out-alt"></i> Đăng xuất</a>
+                        </div>
+                      </li>';
+            } else {
+                // Chưa đăng nhập
+                echo '<li class="nav-item">
+                        <a class="nav-link" href="Login.php"><i class="fas fa-user-circle"></i> Đăng nhập</a>
+                      </li>';
+            }
+            ?>
               </li>
             </ul>
           </div>

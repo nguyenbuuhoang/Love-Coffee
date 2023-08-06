@@ -1,6 +1,7 @@
 <?php
 	include("assets/class/login.php");
 	$p=new mylogin();
+    error_reporting(E_ERROR | E_PARSE);
 ?>
 <!DOCTYPE html>
 <html lang="en">

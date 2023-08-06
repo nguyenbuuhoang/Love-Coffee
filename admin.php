@@ -5,6 +5,7 @@
 	if(isset($_REQUEST['id'])){
 		$layid = $_REQUEST['id'];
 	}
+	
 ?>
 <!doctype html>
 <html>

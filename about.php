@@ -111,26 +111,6 @@ https://templatemo.com/tm-546-sixteen-clothing
                 <p>Khoa Công Nghệ Thông Tin</p>
               </div>
             </div>
-            <div class="team-member">
-              <div class="thumb-container">
-                <img src="assets/images/user2.png" alt="">
-                <div class="hover-effect">
-                  <div class="hover-content">
-                    <ul class="social-icons">
-                      <li><a href="#"><i class="fa fa-facebook"></i></a></li>
-                      <li><a href="#"><i class="fa fa-twitter"></i></a></li>
-                      <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
-                      <li><a href="#"><i class="fa fa-behance"></i></a></li>
-                    </ul>
-                  </div>
-                </div>
-              </div>
-              <div class="down-content">
-                <h3>Lý Gia Kiệt</h3>
-                <span>19488821</span>
-                <p>Khoa Công Nghệ Thông Tin</p>
-              </div>
-            </div>
           </div>
           <div class="col-md-6">
             <div class="team-member">
@@ -150,26 +130,6 @@ https://templatemo.com/tm-546-sixteen-clothing
               <div class="down-content">
                 <h3>Nguyễn Bửu Hoàng</h3>
                 <span>19495041</span>
-                <p>Khoa Công Nghệ Thông Tin</p>
-              </div>
-            </div>
-            <div class="team-member">
-              <div class="thumb-container">
-                <img src="assets/images/user2.png" alt="">
-                <div class="hover-effect">
-                  <div class="hover-content">
-                    <ul class="social-icons">
-                      <li><a href="#"><i class="fa fa-facebook"></i></a></li>
-                      <li><a href="#"><i class="fa fa-twitter"></i></a></li>
-                      <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
-                      <li><a href="#"><i class="fa fa-behance"></i></a></li>
-                    </ul>
-                  </div>
-                </div>
-              </div>
-              <div class="down-content">
-                <h3>Cao Võ Nhật Minh</h3>
-                <span>17039361</span>
                 <p>Khoa Công Nghệ Thông Tin</p>
               </div>
             </div>
